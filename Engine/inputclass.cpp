@@ -65,6 +65,8 @@ bool InputClass::Initialize(HINSTANCE hinstance, HWND hwnd, int screenWidth, int
 	*/
 	// Now acquire the keyboard.
 	result = m_keyboard->Acquire();
+	result = m_keyboard->Acquire();
+
 	if(FAILED(result))
 	{
 		return false;
@@ -93,6 +95,8 @@ bool InputClass::Initialize(HINSTANCE hinstance, HWND hwnd, int screenWidth, int
 
 	// Acquire the mouse.
 	result = m_mouse->Acquire();
+	result = m_mouse->Acquire();
+
 	if(FAILED(result))
 	{
 		return false;
@@ -259,6 +263,7 @@ bool InputClass::IsRightPressed()
 	// Do a bitwise and on the keyboard state to check if the key is currently being pressed.
 	if(m_keyboardState[DIK_RIGHT] & 0x80)
 	{
+		
 		return true;
 	}
 

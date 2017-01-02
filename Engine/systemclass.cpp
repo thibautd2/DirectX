@@ -81,6 +81,7 @@ void SystemClass::Run()
 	done = false;
 	while(!done)
 	{
+
 		// Handle the windows messages.
 		if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
@@ -95,6 +96,7 @@ void SystemClass::Run()
 		}
 		else
 		{
+			
 			// Otherwise do the frame processing.
 			result = Frame();
 			if(!result)

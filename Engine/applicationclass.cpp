@@ -300,6 +300,7 @@ bool ApplicationClass::Frame()
 	}
 
 	// Get the position of the camera.
+	
 	cameraPosition = m_Camera->GetPosition();
 
 	// Do the frame processing for the foliage.

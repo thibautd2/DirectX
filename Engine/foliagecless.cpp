@@ -124,38 +124,31 @@ bool FoliageClass::Frame(Vector3 cameraPosition, ID3D11DeviceContext* deviceCont
 		modelPosition.x = m_foliageArray[i].x;
 		modelPosition.y = -0.1f;
 		modelPosition.z = m_foliageArray[i].z;
-		/*
+
 		// Calculate the rotation that needs to be applied to the billboard model to face the current camera position using the arc tangent function.
-		angle = atan2(modelPosition.x - cameraPosition.x, modelPosition.z - cameraPosition.z) * (180.0 / 3.14);
+		angle = atan2(modelPosition.x - cameraPosition.x, modelPosition.z - cameraPosition.z) * (180.0 / 3.1415);
 
 		// Convert rotation into radians.
 		rotation = (float)angle * 0.0174532925f;
 
 		// Setup the X rotation of the billboard.
+		//D3DXMatrixRotationY(&rotateMatrix, rotation);
 		rotateMatrix.CreateRotationY(rotation);
-		//MatrixRotationY(&rotateMatrix, rotation);
-
 		// Get the wind rotation for the foliage.
 		windRotation = m_windRotation * 0.0174532925f;
 
 		// Setup the wind rotation.
-		//MatrixRotationX(&rotateMatrix2, windRotation);
+		//D3DXMatrixRotationX(&rotateMatrix2, windRotation);
 		rotateMatrix2.CreateRotationX(windRotation);
 
 		// Setup the translation matrix.
-		
-	//	MatrixTranslation(&translationMatrix, modelPosition.x, modelPosition.y, modelPosition.z);
-		Vector3 v(modelPosition.x, modelPosition.y, modelPosition.z);
-		translationMatrix.Translation(v);
-		// Create the final matrix and store it in the instances array
-		finalMatrix *= rotateMatrix;
-		finalMatrix *= rotateMatrix2;
-		finalMatrix *= rotateMatrix2;
-		m_Instances[i].matrix *= finalMatrix;
-		m_Instances[i].matrix *= translationMatrix;
-		*/
-	//	MatrixMultiply(&finalMatrix, &rotateMatrix, &rotateMatrix2);
-//		MatrixMultiply(&m_Instances[i].matrix, &finalMatrix, &translationMatrix);
+		//D3DXMatrixTranslation(&translationMatrix, modelPosition.x, modelPosition.y, modelPosition.z);
+		translationMatrix.CreateTranslation(modelPosition.x, modelPosition.y, modelPosition.z);
+		// Create the final matrix and store it in the instances array.
+		//D3DXMatrixMultiply(&finalMatrix, &rotateMatrix, &rotateMatrix2);
+		finalMatrix = rotateMatrix * rotateMatrix2;
+		m_Instances[i].matrix *= finalMatrix * translationMatrix;
+		//D3DXMatrixMultiply(&m_Instances[i].matrix, &finalMatrix, &translationMatrix);
 	}
 
 	// Lock the instance buffer so it can be written to.
@@ -171,8 +164,7 @@ bool FoliageClass::Frame(Vector3 cameraPosition, ID3D11DeviceContext* deviceCont
 	// Copy the instances array into the instance buffer.
 	memcpy(instancesPtr, (void*)m_Instances, (sizeof(InstanceType) * m_foliageCount));
 
-	// Unlock the instance buffer.
-	deviceContext->Unmap(m_instanceBuffer, 0);
+	// Unlock the instance buffer.	deviceContext->Unmap(m_instanceBuffer, 0);
 
 	return true;
 }

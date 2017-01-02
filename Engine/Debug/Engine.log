@@ -1,1 +1,38 @@
-﻿
+﻿  userinterfaceclass.cpp
+  timerclass.cpp
+  textureshaderclass.cpp
+  textureclass.cpp
+  textclass.cpp
+  terrainclass.cpp
+  c:\program files (x86)\windows kits\8.1\include\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\thiba\desktop\directx\engine\inputclass.h(19): warning C4005: 'DIRECTINPUT_VERSION' : redéfinition de macro
+  c:\program files (x86)\windows kits\8.1\include\um\dinput.h(48): note: voir la définition précédente de 'DIRECTINPUT_VERSION'
+  systemclass.cpp
+  stdafx.cpp
+  c:\program files (x86)\windows kits\8.1\include\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\thiba\desktop\directx\engine\inputclass.h(19): warning C4005: 'DIRECTINPUT_VERSION' : redéfinition de macro
+  c:\program files (x86)\windows kits\8.1\include\um\dinput.h(48): note: voir la définition précédente de 'DIRECTINPUT_VERSION'
+  shadermanagerclas.cpp
+  positionclass.cpp
+  modelclass.cpp
+  main.cpp
+  inputclass.cpp
+  fpsclass.cpp
+  fontshaderclass.cpp
+  fontclass.cpp
+  foliageshaderclass.cpp
+  foliagecless.cpp
+  SimpleMath.cpp
+  c:\program files (x86)\windows kits\8.1\include\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  DDSTextureLoader.cpp
+  c:\program files (x86)\windows kits\8.1\include\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Génération de code en cours...
+  Compilation en cours...
+  d3dclass.cpp
+  cpuclass.cpp
+  colorshaderclass.cpp
+  cameraclass.cpp
+  applicationclass.cpp
+  Génération de code en cours...
+  Engine.vcxproj -> C:\Users\thiba\Desktop\DirectX\Debug\Engine.exe
+  Engine.vcxproj -> C:\Users\thiba\Desktop\DirectX\Debug\Engine.pdb (Full PDB)
